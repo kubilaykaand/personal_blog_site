@@ -18,7 +18,7 @@ from typing import List
 from sqlalchemy import ForeignKey
 
 import hashlib
-
+import os
 
 '''
 Make sure the required packages are installed: 
@@ -34,7 +34,7 @@ This will install the packages from the requirements.txt for this project.
 '''
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
