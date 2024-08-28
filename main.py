@@ -35,6 +35,8 @@ This will install the packages from the requirements.txt for this project.
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY')
+secret_key = os.getenv('FLASK_SECRET_KEY')
+print(secret_key)
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -282,4 +284,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5000)
+    app.run(debug=False, port=10000)
